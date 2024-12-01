@@ -15,4 +15,17 @@ double calcularAngulo(const Punto& a, const Punto& b, const Punto& c, bool enGra
     double aby = b.y - a.y;
     double bcx = c.x - b.x;
     double bcy = c.y - b.y;
+
+      double productoPunto = abx * bcx + aby * bcy;
+
+    double magnitudAB = sqrt(abx * abx + aby * aby);
+    double magnitudBC = sqrt(bcx * bcx + bcy * bcy);
+
+    double angulo = acos(productoPunto / (magnitudAB * magnitudBC));
+
+    if (enGrados) {
+        angulo = angulo * (180.0 / PI);
+    }
+
+    return angulo;
 }
