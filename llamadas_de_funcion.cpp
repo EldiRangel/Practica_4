@@ -26,3 +26,24 @@ void proceso() {
 
     cout << "Persona ingresada: " << p.nombre << " " << p.apellido << ", Cédula: " << p.cedula << ", Género: " << p.genero << endl;
 }
+
+int obtenerNumeroLlamadas() {
+    return contadorLlamadas;
+}
+
+int main() {
+    char opcion;
+
+    do {
+        proceso();
+
+        cout << "¿Desea ingresar otra persona? (s/n): ";
+        cin >> opcion;
+    } while (opcion == 's' || opcion == 'S');
+
+    int numLlamadas = obtenerNumeroLlamadas();
+    cout << "La funcion se ha llamado " << numLlamadas << " veces." << endl;
+
+    return 0;
+}
+
