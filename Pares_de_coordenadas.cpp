@@ -19,4 +19,13 @@ int Interseccion(const Puntos& inicio1, const Puntos& fin1, const Puntos& inicio
         if ((xInterseccion >= min(inicio1.x, fin1.x) && xInterseccion <= max(inicio1.x, fin1.x)) &&
             (xInterseccion >= min(inicio2.x, fin2.x) && xInterseccion <= max(inicio2.x, fin2.x))) {
             return 1; 
-        } 
+        } else {
+            return -1; 
+        }
+    }
+}
+
+int Interseccion(const Puntos& inicio1, const Puntos& fin1, const Puntos& inicio2, const Puntos& fin2, bool checkPerpendicular) {
+    double pendiente1 = (fin1.y - inicio1.y) / (fin1.x - inicio1.x);
+    double pendiente2 = (fin2.y - inicio2.y) / (fin2.x - inicio2.x);
+
