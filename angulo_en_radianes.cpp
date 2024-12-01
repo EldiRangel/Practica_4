@@ -29,3 +29,28 @@ double calcularAngulo(const Punto& a, const Punto& b, const Punto& c, bool enGra
 
     return angulo;
 }
+
+int main() {
+    Punto a, b, c;
+    char opcion;
+
+    cout << "Ingrese las coordenadas del punto A (x y): ";
+    cin >> a.x >> a.y;
+    cout << "Ingrese las coordenadas del punto B (x y): ";
+    cin >> b.x >> b.y;
+    cout << "Ingrese las coordenadas del punto C (x y): ";
+    cin >> c.x >> c.y;
+
+    double anguloRadianes = calcularAngulo(a, b, c);
+    double anguloGrados = calcularAngulo(a, b, c, true);
+
+    cout << "Angulo en radianes: " << anguloRadianes << endl;
+    cout << "¿Desea convertir el ángulo a grados? (s/n): ";
+    cin >> opcion;
+
+    if (opcion == 's' || opcion == 'S') {
+        cout << "Angulo en grados: " << anguloGrados << endl;
+    }
+
+    return 0;
+}
