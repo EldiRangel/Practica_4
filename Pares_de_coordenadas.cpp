@@ -11,4 +11,12 @@ int Interseccion(const Puntos& inicio1, const Puntos& fin1, const Puntos& inicio
      if (pendiente1 == pendiente2) {
         
         return 0;
-    } 
+    } else {
+        double b1 = inicio1.y - pendiente1 * inicio1.x;
+        double b2 = inicio2.y - pendiente2 * inicio2.x;
+        double xInterseccion = (b2 - b1) / (pendiente1 - pendiente2);
+        
+        if ((xInterseccion >= min(inicio1.x, fin1.x) && xInterseccion <= max(inicio1.x, fin1.x)) &&
+            (xInterseccion >= min(inicio2.x, fin2.x) && xInterseccion <= max(inicio2.x, fin2.x))) {
+            return 1; 
+        } 
